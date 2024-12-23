@@ -143,7 +143,7 @@ MonoBehaviour:
     probability: 5
   - itemType: 9
     count: 3
-    probability: 10
+    probability: 100
   firepoint: {fileID: 6481236350030701304}
   attackDelay: 0.75
 --- !u!1 &4847962876566931504

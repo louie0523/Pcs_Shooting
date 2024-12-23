@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Boss : Enemy
 {
+    public int MaxHp;
+
     public List<Transform> bulletPoints = new List<Transform>();
 
     public List<int> spellIndexes = new List<int>();
@@ -33,7 +35,7 @@ public class Boss : Enemy
             GameManager.Instance.EndGame();
         }
         currentSpellTime = 0;
-        Hp = 100;
+        Hp = MaxHp;
         int spellIndex = spellIndexes[Random.Range(0, spellIndexes.Count)];
         spellIndexes.Remove(spellIndex);
         currentSpell = StartCoroutine("Spell" + spellIndex);
@@ -116,7 +118,7 @@ public class Boss : Enemy
     }
     void Move()
     {
-        if (transform.position.y <= 3) { canAttack = true; return; }
+        if (transform.position.y <= 3) { canAttack = true; InGameUI.Instance.EnAbleBossHpBar(); return; }
         transform.position += Vector3.down * speed * Time.deltaTime;
     }
 }

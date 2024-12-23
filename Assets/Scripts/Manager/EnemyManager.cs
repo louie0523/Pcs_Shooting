@@ -1,8 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
-using Unity.VisualScripting;
-using UnityEditorInternal.Profiling.Memory.Experimental.FileFormat;
 using UnityEngine;
 
 public class EnemyManager : MonoBehaviour
